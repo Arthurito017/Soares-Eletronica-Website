@@ -1,0 +1,806 @@
+/* Responsividade e Estilização Adicional */
+
+/* Estilo geral */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Cabeçalho animado */
+.animated-header {
+    background: linear-gradient(90deg, #000, #333);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border: 2px solid #fdd835;
+}
+
+/* Responsividade e Estilização Adicional */
+
+/* Botão de links (sanduíche) */
+.navbar-toggler {
+    border: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.navbar-toggler-icon {
+    background-color: white;
+    border-radius: 3px;
+    width: 30px;
+    height: 4px;
+    display: block;
+    margin: 6px 0;
+    content: '';
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 992px) {
+    .navbar-toggler {
+        position: fixed;
+        right: 15px;
+        top: 15px;
+    }
+}
+
+/* Corrigir o problema do menu que não fecha */
+.navbar-collapse.show {
+    display: block !important;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Navegação */
+.nav-link {
+    color: #fff !important;
+    margin: 0 10px;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 8px 15px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #fdd835 !important;
+    border: 2px solid #fdd835;
+    transform: scale(1.1);
+}
+
+/* Estilo da Logo na Navbar */
+.logo {
+    height: 50px;
+    /* Altura proporcional para a logo */
+    width: auto;
+    /* Mantém a proporção da imagem */
+    object-fit: contain;
+    /* Garante que a imagem não seja cortada */
+    margin-right: 10px;
+    /* Espaçamento entre a logo e o texto */
+    transition: transform 0.3s ease;
+    /* Efeito suave para hover */
+    animation: fadeIn 2s ease-in-out;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    /* Alinha verticalmente a logo e o texto */
+    gap: 10px;
+    /* Espaço entre a logo e o texto */
+    text-decoration: none;
+    /* Remove underline */
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    /* Aumenta levemente a logo ao passar o mouse */
+}
+
+/* Responsividade para a Logo */
+@media (max-width: 768px) {
+    .logo {
+        height: 40px;
+        /* Reduz a altura em dispositivos menores */
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        height: 35px;
+        /* Altura ainda menor para telas muito pequenas */
+    }
+}
+
+
+/* Botão de WhatsApp */
+.btn-whatsapp {
+    background-color: #25d366;
+    color: #fff !important;
+    border: 2px solid #1ebe5d;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe5d;
+    transform: scale(1.1);
+    border-color: #25d366;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 992px) {
+    .brand-name {
+        font-size: 1.5rem;
+    }
+
+    .nav-link {
+        padding: 5px 10px;
+        margin: 0 5px;
+    }
+
+    .btn-whatsapp {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-link {
+        font-size: 0.9rem;
+        margin: 5px 0;
+    }
+
+    .btn-whatsapp {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .brand-name {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .btn-whatsapp {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+/* Estilo da seção Home */
+.home-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fdd835;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.3);
+}
+
+.home-content {
+    z-index: 2;
+    max-width: 800px;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* Estilo da logo */
+.home-logo {
+    width: 150px;
+    height: auto;
+}
+
+/* Card do slogan */
+.home-card {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+    border: 1px solid #fdd835;
+    border-radius: 15px;
+    padding: 20px 30px;
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.slogan {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fdd835;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 1rem;
+    color: #f1f1f1;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Botões Call to Action */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.buttons .btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Botão "Saiba Mais" elegante */
+.buttons .btn-primary {
+    background: linear-gradient(90deg, #fdd835, #ffc107);
+    color: #000;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 4px 15px rgba(253, 216, 53, 0.5);
+}
+
+.buttons .btn-primary:hover {
+    background: linear-gradient(90deg, #ffc107, #fdd835);
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(253, 216, 53, 0.7);
+}
+
+/* Botão WhatsApp */
+.buttons .btn-whatsapp {
+    background-color: #25d366;
+    color: #fff !important;
+    border: 2px solid #1ebe5d;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.buttons .btn-whatsapp:hover {
+    background-color: #1ebe5d;
+    transform: scale(1.1);
+    border-color: #25d366;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .slogan {
+        font-size: 1.4rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .buttons .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .slogan {
+        font-size: 1.2rem;
+    }
+
+    .description {
+        font-size: 0.8rem;
+    }
+
+    .buttons {
+        gap: 10px;
+    }
+
+    .buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Animação do Card */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section de Serviços */
+.services-section {
+    background: linear-gradient(90deg, #000, #333);
+    /* Fundo degradê escuro */
+    padding: 60px 20px;
+    border: 2px solid #fdd835;
+}
+
+.section-title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #fdd835;
+    /* Amarelo destaque */
+    margin-bottom: 30px;
+}
+
+/* Cards de Serviços */
+.card {
+    background: linear-gradient(135deg, #222, #444);
+    /* Fundo degradê escuro */
+    border: 1px solid #555;
+    border-radius: 15px;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Ícones dos Cards */
+.icon {
+    font-size: 3rem;
+    color: #fdd835;
+    /* Amarelo destaque */
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fdd835;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 1.3rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
+
+    .icon {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .card-text {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* Section de Marcas */
+.brands-section {
+    background: #f8f9fa;
+    /* Fundo claro */
+    border: 2px solid #fdd835;
+}
+
+.brand-logo {
+    width: 100%;
+    max-width: 120px;
+    /* Tamanho máximo para logos */
+    height: auto;
+    object-fit: contain;
+    /* Garante proporção */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: auto;
+    display: block;
+}
+
+.brand-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .brand-logo {
+        max-width: 100px;
+        /* Ajusta tamanho em telas médias */
+    }
+}
+
+@media (max-width: 768px) {
+    .brand-logo {
+        max-width: 80px;
+        /* Ajusta tamanho em telas menores */
+    }
+}
+
+@media (max-width: 576px) {
+    .row-cols-md-5 {
+        row-gap: 1rem;
+        /* Ajusta o espaçamento para telas menores */
+    }
+}
+
+/* Section Sobre Nós */
+.about-section {
+    background: url('imgs/técnico-sobrenos.webp') no-repeat center center/cover;
+    /* Imagem de fundo */
+    color: #fff;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 1;
+    border: 2px solid #fdd835;
+}
+
+/* Overlay Escuro */
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    /* Degradê escuro */
+    z-index: -1;
+}
+
+/* Título Centralizado */
+.about-section-title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #fdd835;
+    /* Amarelo destaque */
+    margin-bottom: 40px;
+}
+
+/* Carrossel de Textos */
+.about-carousel-inner {
+    text-align: center;
+}
+
+.about-card {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(50, 50, 50, 0.8));
+    /* Fundo degradê escuro */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 600px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.about-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fdd835;
+    /* Amarelo destaque */
+    margin-bottom: 15px;
+}
+
+.about-card-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ddd;
+}
+
+.about-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* Controles do Carrossel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+    /* Ícones brancos */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .about-section-title {
+        font-size: 2rem;
+    }
+
+    .about-card-title {
+        font-size: 1.3rem;
+    }
+
+    .about-card-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-section-title {
+        font-size: 1.8rem;
+    }
+
+    .about-card-title {
+        font-size: 1.2rem;
+    }
+
+    .about-card-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* Section Contato */
+.contact-section {
+    background: linear-gradient(90deg, #000, #333);
+    /* Fundo degradê escuro */
+    color: #fff;
+    padding: 60px 20px;
+    border: 2px solid #fdd835;
+}
+
+.contact-title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #fdd835;
+    /* Amarelo destaque */
+    margin-bottom: 40px;
+}
+
+/* Informações de Contato */
+.contact-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.contact-info i {
+    color: #fdd835;
+    /* Ícones em amarelo */
+    font-size: 1.2rem;
+}
+
+/* Botões de Redes Sociais */
+.btn-whatsapp {
+    background-color: #25d366;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe5d;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.7);
+}
+
+.btn-instagram {
+    background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(250, 100, 120, 0.5);
+}
+
+.btn-instagram:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(250, 100, 120, 0.7);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contact-title {
+        font-size: 2rem;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
+
+    .social-icons a {
+        margin-bottom: 10px;
+        width: 100%;
+        /* Botões ocupam largura completa em telas menores */
+        text-align: center;
+    }
+}
+
+/* Rodapé */
+.footer-section {
+    background: linear-gradient(90deg, #000, #333);
+    /* Fundo degradê escuro */
+    color: #fff;
+    padding: 20px 10px;
+    /* Menor altura */
+    font-size: 0.85rem;
+    /* Tamanho reduzido */
+    text-align: center;
+    border: 2px solid #fdd835;
+    
+}
+
+.footer-info p {
+    margin: 0 0 10px;
+    /* Menos espaçamento entre as linhas */
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+.footer-info i {
+    color: #fdd835;
+    /* Ícones em amarelo */
+    font-size: 1.2rem;
+}
+
+/* Redes Sociais */
+.footer-social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.footer-social-icons a:last-child {
+    margin-right: 0;
+    /* Remove margem do último ícone */
+}
+
+.footer-btn-whatsapp {
+    background-color: #25d366;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+}
+
+.footer-btn-whatsapp:hover {
+    background-color: #1ebe5d;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.7);
+}
+
+.footer-btn-instagram {
+    background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+    box-shadow: 0 4px 15px rgba(250, 100, 120, 0.5);
+}
+
+.footer-btn-instagram:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(250, 100, 120, 0.7);
+}
+
+.footer-btn-facebook {
+    background-color: #1877f2;
+    box-shadow: 0 4px 15px rgba(24, 119, 242, 0.5);
+}
+
+.footer-btn-facebook:hover {
+    background-color: #155cdb;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(24, 119, 242, 0.7);
+}
+
+/* Créditos */
+.footer-credits {
+    font-size: 0.8rem;
+    color: #ddd;
+    margin-top: 10px;
+}
+
+.footer-developer-link {
+    color: #fdd835;
+    /* Amarelo destaque */
+    text-decoration: none;
+}
+
+.footer-developer-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .footer-info p {
+        font-size: 0.8rem;
+    }
+
+    .footer-social-icons a {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .footer-credits {
+        font-size: 0.75rem;
+    }
+}
