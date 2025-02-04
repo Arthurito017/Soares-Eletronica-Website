@@ -1,0 +1,13 @@
+{
+    "name": "whatsapp-redirect",
+    "version": "1.0.0",
+    "description": "API para redirecionar para o WhatsApp da empresa",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "express": "^4.18.2"
+    }
+  }
+  
